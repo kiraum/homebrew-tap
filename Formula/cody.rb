@@ -5,7 +5,7 @@ class Cody < Formula
   sha256 "2f25357f26e7710b71e4abead3ad9ee3fc5817fbbd6a78cd6726556982bc935a"
   license "MIT"
 
-  depends_on "node" => :build
+  depends_on "node"
 
   def install
     ENV["NPM_CONFIG_PREFIX"] = libexec.to_s
