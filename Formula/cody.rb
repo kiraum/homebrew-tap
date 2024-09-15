@@ -10,7 +10,7 @@ class Cody < Formula
   def install
     ENV["NPM_CONFIG_PREFIX"] = libexec.to_s
     system "npm", "install", *std_npm_args, "@sourcegraph/cody"
-    rm_f Dir["#{bin}/*"]
+    rm Dir["#{bin}/*"]
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     (bin/"cody").atomic_write <<~EOS
