@@ -9,10 +9,10 @@ class Cody < Formula
 
   def install
     ENV["NPM_CONFIG_PREFIX"] = "#{libexec}"
+    system "rehash"
     system "npm", "install", "-g", "@sourcegraph/cody"
-    system "brew", "rehash"
     bin.install_symlink Dir["#{libexec}/bin/*"]
-    system "brew", "rehash"
+    system "rehash"
   end
 
   test do
