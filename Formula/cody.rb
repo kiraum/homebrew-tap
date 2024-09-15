@@ -8,8 +8,11 @@ class Cody < Formula
   depends_on "node" => :build
 
   def install
+    ENV["NPM_CONFIG_PREFIX"] = "#{libexec}"
     system "npm", "install", "-g", "@sourcegraph/cody"
-    bin.install_symlink Dir["#{HOMEBREW_PREFIX}/lib/node_modules/@sourcegraph/cody/bin/*"]
+    system "brew", "rehash"
+    bin.install_symlink Dir["#{libexec}/bin/*"]
+    system "brew", "rehash"
   end
 
   test do
