@@ -13,6 +13,10 @@ class Cody < Formula
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
+  def post_install
+    (bin/"cody").write_env_script libexec/"bin/cody", NODE_NO_WARNINGS: "1"
+  end
+
   test do
     system "#{bin}/cody", "--version"
   end
