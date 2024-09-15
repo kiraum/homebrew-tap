@@ -10,11 +10,15 @@ class Cody < Formula
   def install
     ENV["NPM_CONFIG_PREFIX"] = "#{libexec}"
     system "npm", "install", "-g", "@sourcegraph/cody"
-    bin.install_symlink Dir["#{libexec}/bin/*"]
-  end
 
-  def post_install
-    (bin/"cody").write_env_script libexec/"bin/cody", NODE_NO_WARNINGS: "1"
+    rm_f Dir["#{bin}/*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
+
+    (bin/"cody").atomic_write <<~EOS
+      #!/bin/bash
+      export NODE_NO_WARNINGS=1
+      exec "#{libexec}/bin/cody" "$@"
+    EOS
   end
 
   test do
