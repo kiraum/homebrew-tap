@@ -8,9 +8,8 @@ class Cody < Formula
   depends_on "node" => :build
 
   def install
-    ENV["NPM_CONFIG_PREFIX"] = "#{libexec}"
-    system "npm", "install", "-g", "@sourcegraph/cody"
-
+    ENV["NPM_CONFIG_PREFIX"] = libexec.to_s
+    system "npm", "install", *std_npm_args, "@sourcegraph/cody"
     rm_f Dir["#{bin}/*"]
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
@@ -22,6 +21,6 @@ class Cody < Formula
   end
 
   test do
-    system "#{bin}/cody", "--version"
+    system bin/"cody", "--version"
   end
 end
