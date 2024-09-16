@@ -21,6 +21,7 @@ class Cody < Formula
   end
 
   test do
-    system bin/"cody", "--version"
+    assert_match "The provided access token is invalid",
+                 shell_output("#{bin}/cody auth login --access-token fake-token-sg-a7f9b2c4e6d8 2>&1", 1)
   end
 end
