@@ -9,7 +9,7 @@ class Cody < Formula
 
   def install
     ENV["NPM_CONFIG_PREFIX"] = libexec.to_s
-    system "npm", "install", *std_npm_args, "@sourcegraph/cody@5.5.15"
+    system "npm", "install", *std_npm_args
     rm Dir["#{bin}/*"]
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
