@@ -8,9 +8,7 @@ class Cody < Formula
   depends_on "node"
 
   def install
-    ENV["NPM_CONFIG_PREFIX"] = libexec.to_s
-    system "npm", "install", *std_npm_args
-    rm Dir["#{bin}/*"]
+    system "npm", "install", "--prefix=#{libexec}", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
     (bin/"cody").atomic_write <<~EOS
