@@ -1,24 +1,28 @@
-# homebrew-cody
-Cody CLI brew tap formula
+# Homebrew Taps
 
-## Install Cody CLI
+This repository contains Homebrew tap formulas for Cody CLI and askJira.
+
+## Cody CLI
+
+Sourcegraph Cody CLI for AI-assisted coding.
+
+### Installation
 ```bash
-brew tap kiraum/homebrew-cody
-brew install cody
+brew install kiraum/tap/cody
 ```
 
-## Authenticate with SourceGraph/Cody
+### Authentication
 ```bash
 cody auth login --web
 ```
 
-## Check that's all good
+### Check that's all good
 ```bash
 » cody auth whoami
 ✔ Authenticated as tfgoncalves-koufb on https://sourcegraph.com/
 ```
 
-## Test it
+### Test it
 ```bash
 » cody chat -m 'hey'
 Hello! I'm Cody, an AI coding assistant from Sourcegraph. How can I help you with coding or development tasks today? Whether you need help with writing code, debugging, explaining concepts, or anything else related to programming, I'm here to assist. What would you like to work on?
@@ -76,3 +80,38 @@ Is there anything specific about coding or software development you'd like assis
 
 ✔ Claude 3.5 Sonnet (51 tokens/second)
 ```
+
+## askJira
+Cody Chat CLI for Jira Integration.
+
+### Installation
+```bash
+brew install kiraum/tap/askjira
+```
+
+### Usage
+Check the version:
+```bash
+askJira --version
+```
+
+```bash
+askJira
+askJira 0.0.1
+Ask Cody a question or a question about Jira tickets if JQL is provided.
+
+USAGE:
+    askJira [FLAGS] [OPTIONS] --message <message>
+
+FLAGS:
+        --debug      Enable debug mode
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+OPTIONS:
+        --jql <jql>                  JQL query to search Jira tickets
+        --max-issues <max-issues>    Maximum number of issues to fetch [default: 50]
+        --message <message>          The message to send to Cody
+```
+
+For more information on askJira, visit: https://github.com/kiraum/askJira/blob/main/README.md
