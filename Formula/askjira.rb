@@ -1,5 +1,5 @@
 class Askjira < Formula
-  desc "Cody Chat CLI for Jira Integration"
+  desc "Cody Chat API for Jira Integration"
   homepage "https://github.com/kiraum/askJira"
   url "https://github.com/kiraum/askJira/raw/main/releases/v0.0.1/askJira-v0.0.1-macos-arm64.tar.gz",
       using: CurlDownloadStrategy
