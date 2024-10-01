@@ -1,11 +1,11 @@
 class Askjira < Formula
-  version = "0.0.2"
+  version = "0.0.3"
 
   desc "Cody Chat API for Jira Integration"
   homepage "https://github.com/kiraum/askJira"
   url "https://github.com/kiraum/askJira/raw/main/releases/v#{version}/askJira-v#{version}-macos-arm64.tar.gz",
       using: CurlDownloadStrategy
-  sha256 "b3209b4fc764be710128898a21de6c41e2a64c42f927628b76dd4a19443aa748"
+  sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
   version version
   license "MIT"
 
