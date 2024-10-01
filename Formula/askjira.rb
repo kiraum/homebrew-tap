@@ -5,7 +5,7 @@ class Askjira < Formula
   homepage "https://github.com/kiraum/askJira"
   url "https://github.com/kiraum/askJira/raw/main/releases/v#{version}/askJira-v#{version}-macos-arm64.tar.gz",
       using: CurlDownloadStrategy
-  sha256 "7f633626713749fce9420c13c420ddc28efaaaf9a934710d95232f477f608080"
+  sha256 "2afae1b686c7f9c21b87e3fb6559ce362826363c3a47701fb1c26adc6ae1391b"
   version version
   license "MIT"
 
