@@ -1,5 +1,5 @@
 class Askjira < Formula
-  version = "0.0.3"
+  version = "0.0.5"
 
   desc "Cody Chat API for Jira Integration"
   homepage "https://github.com/kiraum/askJira"
